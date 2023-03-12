@@ -2,6 +2,17 @@
 
 def parallel_processing(n, m, data):
     output = []
+    
+    for i in range(n):
+        output.append((i, 0))
+
+    procNum = n
+
+    while procNum <= m:
+        for i in range(n):
+            sec = output[]
+
+
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
 
