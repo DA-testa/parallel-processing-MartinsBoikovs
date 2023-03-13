@@ -11,7 +11,7 @@ def parallel_processing(n, m, data):
     while procNum <= m:
         for i in range(n):
             sec = output[procNum-n][1] + int(data[procNum-n])
-            output.append(i, sec)
+            output.append((i, sec))
             procNum = procNum + 1
 
     return output
