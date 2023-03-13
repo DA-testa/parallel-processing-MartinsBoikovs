@@ -2,30 +2,32 @@
 
 def parallel_processing(n, m, data):
     output = []
-    # TODO: write the function for simulating parallel tasks, 
-    # create the output pairs
+    
+    for i in range(n):
+        output.append((i, 0))
+
+    procNum = n
+
+    while procNum <= m:
+        for i in range(n):
+            sec = output[procNum-n][1] + int(data[procNum-n])
+            output.append((i, sec))
+            procNum = procNum + 1
 
     return output
 
 def main():
-    # TODO: create input from keyboard
-    # input consists of two lines
-    # first line - n and m
-    # n - thread count 
-    # m - job count
-    n = 0
-    m = 0
+    text = input().split()
+    n = text[0]
+    m = text[1]
 
-    # second line - data 
-    # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = []
+    data = input().split()
 
-    # TODO: create the function
-    result = parallel_processing(n,m,data)
+    result = parallel_processing(int(n),int(m),data)
     
-    # TODO: print out the results, each pair in it's own line
-
-
-
+    for i,j in result:
+        print(i,j)
+    
 if __name__ == "__main__":
     main()
