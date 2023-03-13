@@ -10,11 +10,9 @@ def parallel_processing(n, m, data):
 
     while procNum <= m:
         for i in range(n):
-            sec = output[]
-
-
-    # TODO: write the function for simulating parallel tasks, 
-    # create the output pairs
+            sec = output[procNum-n][1] + int(data[procNum-n])
+            output.append(i, sec)
+            procNum = procNum + 1
 
     return output
 
@@ -26,7 +24,7 @@ def main():
     data = []
     data = input().split()
 
-    result = parallel_processing(n,m,data)
+    result = parallel_processing(int(n),int(m),data)
     
     for i,j in result:
         print(i,j)
